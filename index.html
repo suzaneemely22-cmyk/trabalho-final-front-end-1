@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafeteria Grão &amp; Cia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO: tag semântica <header> + <nav> com o menu de navegação -->
+  <header id="cabecalho">
+    <div class="container">
+      <p class="logo">Grão <span>&amp;</span> Cia</p>
+      <nav>
+        <ul class="menu">
+          <!-- Links âncora: apontam para seções desta mesma página -->
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#ambiente">Ambiente</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <!-- Link interno: aponta para outra página do próprio site -->
+          <li><a href="cardapio.html">Cardápio completo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- <main>: conteúdo principal da página -->
+  <main>
+
+    <!-- SEÇÃO 1: Hero de abertura -->
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div>
+          <h1>Café bom de verdade, feito com <span class="destaque">calma</span>.</h1>
+          <p>
+            A Grão &amp; Cia nasceu em 2015 com um objetivo simples: torrar grãos de
+            qualidade e servir cada xícara com atenção. Aqui, cada café é <strong>preparado
+            na hora</strong>, um de cada vez.
+          </p>
+          <p>
+            Fica na Rua das Palmeiras, 128, no centro da cidade.<br>
+            Aberto todos os dias, das 7h às 20h.
+          </p>
+          <a href="#cardapio" class="botao">Ver cardápio</a>
+        </div>
+        <img src="imagens/xicara-cafe.svg" alt="Ilustração de uma xícara de café branca com vapor subindo, sobre um pires escuro">
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: Sobre (article) + horário (aside) -->
+    <section class="secao secao--clara" id="sobre">
+      <div class="container sobre-grid">
+
+        <!-- <article>: conteúdo independente, faria sentido também fora desta página -->
+        <article>
+          <h2>Nossa história</h2>
+          <p>
+            Tudo começou em uma cozinha pequena, com um torrador emprestado e muita
+            vontade de acertar o ponto da torra. Hoje a Grão &amp; Cia compra direto de
+            pequenos produtores de Minas Gerais e do Espírito Santo, pagando um preço
+            justo por cada saca.
+          </p>
+          <p>
+            Nosso time é formado por baristas apaixonados, que estudam constantemente
+            novas formas de extração — do coado tradicional ao <em>cold brew</em> de 18 horas.
+          </p>
+        </article>
+
+        <!-- <aside>: conteúdo relacionado, mas separado do fluxo principal do artigo -->
+        <aside class="aside-horario">
+          <h3>Horário de funcionamento</h3>
+          <ul>
+            <li><span>Segunda a sexta</span> <span>7h – 20h</span></li>
+            <li><span>Sábado</span> <span>8h – 21h</span></li>
+            <li><span>Domingo</span> <span>9h – 15h</span></li>
+          </ul>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: Cardápio (tabela) -->
+    <section class="secao" id="cardapio">
+      <div class="container">
+        <h2>Cardápio em destaque</h2>
+        <p>Uma prévia dos nossos itens mais pedidos.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Descrição</th>
+              <th>Preço</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Espresso</td>
+              <td>Extração curta e encorpada, servida em xícara pequena</td>
+              <td>R$ 7,00</td>
+            </tr>
+            <tr>
+              <td>Cappuccino</td>
+              <td>Espresso, leite vaporizado e uma pitada de canela</td>
+              <td>R$ 11,00</td>
+            </tr>
+            <tr>
+              <td>Cold Brew</td>
+              <td>Café extraído a frio por 18 horas, servido com gelo</td>
+              <td>R$ 13,00</td>
+            </tr>
+            <tr>
+              <td>Croissant</td>
+              <td>Amanteigado, assado três vezes ao dia</td>
+              <td>R$ 9,00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="ver-cardapio">
+          <!-- Segundo link interno / reforço do primeiro -->
+          Quer ver tudo? <a href="cardapio.html">Acesse o cardápio completo</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: Ambiente (imagens + listas) -->
+    <section class="secao secao--clara" id="ambiente">
+      <div class="container">
+        <h2>O ambiente</h2>
+        <p>Um espaço pensado para ficar — seja para trabalhar, ler ou colocar o papo em dia.</p>
+
+        <div class="galeria">
+          <img src="imagens/ambiente-cafeteria.svg" alt="Ilustração do salão interno da cafeteria, com mesa, cadeiras e plantas">
+
+          <!-- <figure> + <figcaption>: imagem acompanhada de legenda -->
+          <figure>
+            <img src="imagens/doces.svg" alt="Ilustração de um prato com croissant, muffin e cookie">
+            <figcaption>Nossa seleção de doces é feita fresca todas as manhãs.</figcaption>
+          </figure>
+        </div>
+
+        <div class="listas-ambiente">
+          <div>
+            <h3>Comodidades</h3>
+            <!-- Lista não ordenada -->
+            <ul>
+              <li>Wi-Fi gratuito</li>
+              <li>Tomadas em todas as mesas</li>
+              <li>Ambiente pet friendly</li>
+              <li>Área externa com sombra</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Como chegar</h3>
+            <!-- Lista ordenada -->
+            <ol>
+              <li>Saia da praça central e siga pela Rua das Flores;</li>
+              <li>Vire à direita na Rua das Palmeiras;</li>
+              <li>Ande cerca de 100 metros;</li>
+              <li>A cafeteria fica no número 128, ao lado da livraria.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer id="contato">
+    <div class="container">
+      <div>
+        <h3>Grão &amp; Cia</h3>
+        <p>Rua das Palmeiras, 128<br>Centro — Minas Gerais</p>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <p>
+          (32) 99999-0000<br>
+          contato@graoecia.com.br
+        </p>
+      </div>
+      <div>
+        <h3>Redes sociais</h3>
+        <!-- Link externo: aponta para um domínio fora do site -->
+        <p><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+        <p><a href="https://www.google.com/maps" target="_blank" rel="noopener">Ver no mapa</a></p>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Grão &amp; Cia. Trabalho acadêmico — Front-End I.</p>
+  </footer>
+
+</body>
+</html>

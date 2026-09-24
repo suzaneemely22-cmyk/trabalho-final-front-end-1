@@ -1,0 +1,328 @@
+/* =========================================================
+   CAFETERIA GRÃO & CIA — style.css
+   Este arquivo concentra TODO o CSS do projeto (CSS externo).
+   Os comentários indicam, de propósito, qual tipo de seletor
+   está sendo usado em cada bloco — isso ajuda vocês a
+   explicarem o código no vídeo.
+   ========================================================= */
+
+/* ---------- SELETOR UNIVERSAL ----------
+   Aplica a regra a TODOS os elementos da página.
+   Usamos para zerar margens/padding padrão do navegador
+   e garantir que padding não estoure a largura dos elementos. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- VARIÁVEIS DE COR (design tokens) ---------- */
+:root {
+  --creme: #F6EFE4;
+  --marrom-escuro: #2B1B12;
+  --marrom-medio: #5C3A1E;
+  --dourado: #C89B3C;
+  --verde-folha: #4B5842;
+  --branco: #FFFFFF;
+}
+
+/* ---------- SELETOR DE ELEMENTO ----------
+   Aplica a regra a todas as tags <body> da página. */
+body {
+  font-family: 'Work Sans', Arial, sans-serif;
+  color: var(--marrom-escuro);
+  background-color: var(--creme);
+  line-height: 1.6;
+}
+
+/* ---------- SELETOR AGRUPADO ----------
+   Uma única regra para h1, h2 e h3 ao mesmo tempo,
+   porque todos os títulos usam a mesma fonte de destaque. */
+h1, h2, h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  color: var(--marrom-escuro);
+  line-height: 1.2;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; margin-bottom: 1rem; }
+h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+
+p { margin-bottom: 1rem; max-width: 65ch; }
+
+a {
+  color: var(--marrom-medio);
+  text-decoration: none;
+}
+
+a:hover { color: var(--dourado); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------- CONTAINER GERAL ---------- */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* =========================================================
+   CABEÇALHO / NAVEGAÇÃO
+   ========================================================= */
+
+/* ---------- SELETOR DE ID ----------
+   #cabecalho é único na página, por isso usamos ID. */
+#cabecalho {
+  background-color: var(--marrom-escuro);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#cabecalho .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* ---------- SELETOR DE CLASSE ----------
+   .logo pode, em tese, se repetir — por isso é classe. */
+.logo {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  color: var(--creme);
+}
+
+.logo span { color: var(--dourado); }
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu a {
+  color: var(--creme);
+  font-weight: 500;
+}
+
+.menu a:hover { color: var(--dourado); }
+
+/* =========================================================
+   HERO (seção de abertura)
+   ========================================================= */
+.hero {
+  padding: 4rem 0;
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero h1 { margin-bottom: 1rem; }
+
+.hero p { margin-bottom: 1.5rem; }
+
+.destaque {
+  color: var(--dourado);
+}
+
+/* Botão de call-to-action */
+.botao {
+  display: inline-block;
+  background-color: var(--marrom-escuro);
+  color: var(--creme);
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.botao:hover {
+  background-color: var(--dourado);
+  color: var(--marrom-escuro);
+}
+
+/* =========================================================
+   SEÇÕES GERAIS
+   ========================================================= */
+.secao {
+  padding: 4rem 0;
+  border-top: 1px solid rgba(43, 27, 18, 0.1);
+}
+
+.secao--clara {
+  background-color: var(--branco);
+}
+
+/* Sobre + horário de funcionamento lado a lado */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.aside-horario {
+  background-color: var(--creme);
+  border-left: 4px solid var(--dourado);
+  padding: 1.5rem;
+}
+
+.aside-horario ul {
+  list-style: none;
+}
+
+.aside-horario li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed rgba(43, 27, 18, 0.2);
+}
+
+/* =========================================================
+   CARDÁPIO (tabela)
+   ========================================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background-color: var(--branco);
+}
+
+th, td {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(43, 27, 18, 0.15);
+}
+
+th {
+  background-color: var(--marrom-escuro);
+  color: var(--creme);
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+}
+
+tr:nth-child(even) { background-color: var(--creme); }
+
+.ver-cardapio {
+  margin-top: 1.5rem;
+}
+
+/* =========================================================
+   AMBIENTE (imagens + listas)
+   ========================================================= */
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.galeria figure {
+  background-color: var(--branco);
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+.galeria figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--marrom-medio);
+  text-align: center;
+}
+
+.listas-ambiente {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.listas-ambiente ul,
+.listas-ambiente ol {
+  padding-left: 1.3rem;
+}
+
+.listas-ambiente li { margin-bottom: 0.5rem; }
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+footer {
+  background-color: var(--marrom-escuro);
+  color: var(--creme);
+  padding: 3rem 0 2rem;
+}
+
+footer .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+footer h3 { color: var(--creme); }
+
+footer a { color: var(--creme); }
+footer a:hover { color: var(--dourado); }
+
+.copyright {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(246, 239, 228, 0.15);
+  font-size: 0.85rem;
+  color: rgba(246, 239, 228, 0.7);
+}
+
+/* =========================================================
+   RESPONSIVIDADE — MEDIA QUERIES
+   ========================================================= */
+
+/* Tablets: empilha o hero e reduz a fonte do título */
+@media (max-width: 900px) {
+  .hero .container {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h1 { font-size: 2.4rem; }
+}
+
+/* Celulares: menu empilhado, galeria e listas em coluna única */
+@media (max-width: 600px) {
+  #cabecalho .container {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .galeria,
+  .listas-ambiente {
+    grid-template-columns: 1fr;
+  }
+
+  footer .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+}
